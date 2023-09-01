@@ -1,10 +1,14 @@
 package main
 
-import (
-	"fmt"
-	"reflect"
-)
+import "fmt"
 
+// Punteros
+func main() {
+	color := "rojo"
+	fmt.Println(color, &color)
+}
+
+/*
 // reflect y TypeOf
 // import "reflect"
 func main() {
@@ -12,6 +16,7 @@ func main() {
 	fmt.Println(reflect.TypeOf(string1))
 
 }
+*/
 
 /*
 // tipos de datos
