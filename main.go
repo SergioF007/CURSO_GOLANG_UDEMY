@@ -1,7 +1,19 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+)
 
+// reflect y TypeOf
+// import "reflect"
+func main() {
+	string1 := 3424
+	fmt.Println(reflect.TypeOf(string1))
+
+}
+
+/*
 // tipos de datos
 func main() {
 	var string1 string = "texto"
@@ -42,6 +54,7 @@ func main() {
 	fmt.Println(entero_uint32)
 
 }
+*/
 
 /*
 // variables y constantes
