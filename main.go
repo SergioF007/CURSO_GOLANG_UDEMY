@@ -1,7 +1,63 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+)
 
+// Map
+func main() {
+	// {"id": 1, "name": "sergio"}
+	paises := make(map[string]int)
+	paises["Colombia"] = 4000000
+	paises["Brazil"] = 2000000
+	paises["Argentina"] = 1000000
+	paises["Chile"] = 500000
+	fmt.Println(paises)
+	fmt.Println(reflect.TypeOf(paises))
+	//para imprimir la catidad de un pais en especifico
+	fmt.Println(paises["Colombia"])
+	fmt.Println("--------------------------------")
+	paises2 := map[int]string{
+		1: "Colombia",
+		2: "Brazil",
+		3: "Argentina",
+		4: "Chile",
+	}
+	fmt.Println(paises2)
+	// imprimir un pais
+	fmt.Println(paises2[1])
+	fmt.Println("--------------------------------")
+
+	// Validar si existe un valor en el map
+	pais, existe := paises2[5]
+	if existe {
+		fmt.Println(pais)
+	} else {
+		fmt.Println("No existe")
+	}
+
+	// eliminar un elemento de un pais
+	fmt.Println("--------------------------------")
+	delete(paises2, 1)
+	fmt.Println(paises2)
+
+	// recorrer un map con el for
+	for id, pais := range paises2 {
+		fmt.Println("id: ", id, "nombre: ", pais)
+	}
+
+	// ejemplo de un mapa muy utilizado
+	// en la creación de apis para manejar las respuesta de las trasacciones  que se dan sobre la Api
+	respuesta := map[string]string{
+		"estado":  "Ok",
+		"mensaje": "mensaje descriptivo",
+	}
+	fmt.Println(respuesta)
+
+}
+
+/*
 // Arreglos y Slice
 func main() {
 	// arreglo (array)
@@ -35,6 +91,7 @@ func main() {
 	fmt.Println(paises2)
 
 }
+*/
 
 /*
 // cilos e itereaciones
