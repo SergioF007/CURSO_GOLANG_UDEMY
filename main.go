@@ -1,10 +1,23 @@
 package main
 
-import (
-	"fmt"
-	"reflect"
-)
+import "fmt"
 
+// Funciones
+func main() {
+	miFuncion()
+	miFuncionConParametros(5, 10)
+}
+
+func miFuncion() {
+	fmt.Println("Hola mundo")
+}
+
+func miFuncionConParametros(n1 int, n2 int) {
+	resultado := n1 + n2
+	fmt.Println("La suma es: ", resultado)
+}
+
+/*
 // Map
 func main() {
 	// {"id": 1, "name": "sergio"}
@@ -56,6 +69,7 @@ func main() {
 	fmt.Println(respuesta)
 
 }
+*/
 
 /*
 // Arreglos y Slice
