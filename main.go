@@ -10,6 +10,10 @@ func main() {
 	nombre, apellido, edad := miFuncionConRetornoMultiple()
 	fmt.Printf("Hola %v %v, tu edad es de %v años \n", nombre, apellido, edad)
 	fmt.Println("La suma es = ", suma(10, 12))
+	Tabla := tabla(2)
+	for i := 0; i < 11; i++ {
+		fmt.Printf(" 2 x %v = %v \n", i, Tabla())
+	}
 }
 
 func miFuncion() {
@@ -32,6 +36,17 @@ func miFuncionConRetornoMultiple() (string, string, int) {
 // funcion anonima
 var suma = func(numero1, numero2 int) int {
 	return numero1 + numero2
+}
+
+// clousure  -> son funciones que retornan otra funcion
+func tabla(valor int) func() int {
+	numero := valor
+	secuencia := 0
+	return func() int {
+		resultado := numero * secuencia
+		secuencia++
+		return resultado
+	}
 }
 
 /*
