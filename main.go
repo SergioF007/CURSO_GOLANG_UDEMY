@@ -1,10 +1,23 @@
 package main
 
-import (
-	"fmt"
-	"time"
-)
+import "fmt"
 
+// Recursividad
+// es cuando vamos a llamar un procedimineto en si mismo
+// ó por ejemplo vamos a llamar un funcion dentro de si misma
+func main() {
+	miFuncion(0)
+}
+
+func miFuncion(valor int) {
+	dato := valor + 1
+	fmt.Println(dato)
+	if dato < 10 {
+		miFuncion(dato)
+	}
+}
+
+/*
 // Goroutines
 func main() {
 	// ejemplo 1
@@ -24,6 +37,7 @@ func main() {
 func miFuncion(nombre string) string {
 	return "hola" + nombre
 }
+*/
 
 /*
 // Funciones
