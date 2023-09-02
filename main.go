@@ -6,6 +6,10 @@ import "fmt"
 func main() {
 	miFuncion()
 	miFuncionConParametros(5, 10)
+	fmt.Println(miFuncionConRetorno("Sergio"))
+	nombre, apellido, edad := miFuncionConRetornoMultiple()
+	fmt.Printf("Hola %v %v, tu edad es de %v años \n", nombre, apellido, edad)
+
 }
 
 func miFuncion() {
@@ -15,6 +19,14 @@ func miFuncion() {
 func miFuncionConParametros(n1 int, n2 int) {
 	resultado := n1 + n2
 	fmt.Println("La suma es: ", resultado)
+}
+
+func miFuncionConRetorno(nombre string) string {
+	return "tu nombre es: " + nombre
+}
+
+func miFuncionConRetornoMultiple() (string, string, int) {
+	return "Sergio", "Fernandez", 27
 }
 
 /*
