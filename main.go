@@ -2,6 +2,41 @@ package main
 
 import "fmt"
 
+// Arreglos y Slice
+func main() {
+	// arreglo (array)
+	var paises [4]string
+	paises[0] = "Colombia"
+	paises[1] = "Peru"
+	paises[2] = "Argentina"
+	paises[3] = "Uruguay"
+
+	fmt.Println(paises)
+	fmt.Println("--------------------------------")
+
+	// slice
+	var paises2 = make([]string, 5)
+	paises2[0] = "Colombia"
+	paises2[1] = "Peru"
+	paises2[2] = "Argentina"
+	paises2[3] = "Uruguay"
+	paises2[4] = "España"
+	fmt.Println(paises2)
+	fmt.Println("--------------------------------")
+
+	// agregar un valor al slice
+	paises2 = append(paises2, "Chile")
+	fmt.Println(paises2)
+	fmt.Println("El largo del arreglo es: ", len(paises2))
+
+	// eliminar registros de un slice
+	paises2 = append(paises2[:5], paises2[5+1:]...)
+	fmt.Println("--------------------------------")
+	fmt.Println(paises2)
+
+}
+
+/*
 // cilos e itereaciones
 func main() {
 	i := 1
@@ -15,6 +50,7 @@ func main() {
 	}
 
 }
+*/
 
 /*
 // Punteros
