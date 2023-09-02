@@ -1,7 +1,31 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
+// Goroutines
+func main() {
+	// ejemplo 1
+	fmt.Println(miFuncion("Sergio"))
+	time.Sleep(time.Second * 5)
+	fmt.Println(miFuncion("Paula"))
+	// ejemplo 2
+	miCalna := make(chan string)
+	go func() {
+		miCalna <- miFuncion("Pedro")
+	}()
+	fmt.Println(<-miCalna)
+	fmt.Println("Continuear con la ejecución")
+
+}
+
+func miFuncion(nombre string) string {
+	return "hola" + nombre
+}
+
+/*
 // Funciones
 func main() {
 	miFuncion()
@@ -48,6 +72,7 @@ func tabla(valor int) func() int {
 		return resultado
 	}
 }
+*/
 
 /*
 // Map
