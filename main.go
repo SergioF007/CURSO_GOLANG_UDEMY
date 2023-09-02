@@ -2,11 +2,27 @@ package main
 
 import "fmt"
 
+// cilos e itereaciones
+func main() {
+	i := 1
+	for i < 11 {
+		fmt.Println(i)
+		i++
+	}
+	fmt.Println("--------------------------------")
+	for i2 := 1; i2 < 11; i2++ {
+		fmt.Println(i2)
+	}
+
+}
+
+/*
 // Punteros
 func main() {
 	color := "rojo"
 	fmt.Println(color, &color)
 }
+*/
 
 /*
 // reflect y TypeOf
