@@ -9,7 +9,7 @@ func main() {
 	fmt.Println(miFuncionConRetorno("Sergio"))
 	nombre, apellido, edad := miFuncionConRetornoMultiple()
 	fmt.Printf("Hola %v %v, tu edad es de %v años \n", nombre, apellido, edad)
-
+	fmt.Println("La suma es = ", suma(10, 12))
 }
 
 func miFuncion() {
@@ -27,6 +27,11 @@ func miFuncionConRetorno(nombre string) string {
 
 func miFuncionConRetornoMultiple() (string, string, int) {
 	return "Sergio", "Fernandez", 27
+}
+
+// funcion anonima
+var suma = func(numero1, numero2 int) int {
+	return numero1 + numero2
 }
 
 /*
