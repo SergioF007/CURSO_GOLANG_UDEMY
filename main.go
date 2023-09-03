@@ -1,7 +1,47 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+)
 
+// estructuras
+func main() {
+
+	estructura := Persona{
+		Id:     1,
+		Nombre: "Sergio",
+		Edad:   25,
+		Correo: "sfs@gmail.com",
+	}
+	fmt.Println(estructura)
+	fmt.Println("---------------Imprimir estrucura coon formato-----------------")
+	fmt.Printf("%+v\n", estructura)
+	fmt.Printf("%#v\n", estructura)
+	fmt.Println(reflect.TypeOf(estructura))
+	fmt.Println("---------------Forma 2 de crear estrucuras-----------------")
+	p := new(Persona)
+	p.Id = 2
+	p.Nombre = "Juan"
+	p.Edad = 30
+	p.Correo = "juna@gmail.com"
+	fmt.Println(p)
+	fmt.Printf("%+v\n", p)
+	fmt.Printf("%#v\n", p)
+	fmt.Println(reflect.TypeOf(p))
+
+	// en genral la primera forma es utuilizada en ORM para crear registros y la segunda forma para podificar registros.
+
+}
+
+type Persona struct {
+	Id     int
+	Nombre string
+	Edad   int
+	Correo string
+}
+
+/*
 // Recursividad
 // es cuando vamos a llamar un procedimineto en si mismo
 // ó por ejemplo vamos a llamar un funcion dentro de si misma
@@ -16,6 +56,7 @@ func miFuncion(valor int) {
 		miFuncion(dato)
 	}
 }
+*/
 
 /*
 // Goroutines
