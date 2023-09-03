@@ -1,10 +1,33 @@
 package main
 
-import (
-	"fmt"
-	"reflect"
-)
+import "fmt"
 
+// Interfaces
+func main() {
+
+	e := Estructura{}
+	fmt.Println(e.MiFuncion())
+	fmt.Println(e.Calcular(10, 15))
+
+}
+
+type ejemploInterfaz interface {
+	miFuncion() string
+	calcular(n1, n2 int) int
+}
+
+type Estructura struct {
+}
+
+func (*Estructura) MiFuncion() string {
+	return "Estoy cimplementado el metodo de la interfaz"
+}
+
+func (*Estructura) Calcular(n1, n2 int) int {
+	return n1 + n2
+}
+
+/*
 // estructuras
 func main() {
 
@@ -58,6 +81,8 @@ type Producto struct {
 	Precio      int
 	CategoriaId Categoria
 }
+
+*/
 
 /*
 // Recursividad
