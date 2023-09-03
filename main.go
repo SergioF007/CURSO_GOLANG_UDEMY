@@ -29,8 +29,12 @@ func main() {
 	fmt.Printf("%+v\n", p)
 	fmt.Printf("%#v\n", p)
 	fmt.Println(reflect.TypeOf(p))
-
 	// en genral la primera forma es utuilizada en ORM para crear registros y la segunda forma para podificar registros.
+
+	fmt.Println("---------------estructuras anidadas-----------------")
+	categoria := Categoria{Id: 1, Nombre: "Categoria 1", Slug: "categoria-1"}
+	producto := Producto{Id: 1, Nombre: "Mesa de computador", Slug: "mesa-de-computador", Precio: 1234, CategoriaId: categoria}
+	fmt.Printf("%+v \n", producto)
 
 }
 
@@ -39,6 +43,20 @@ type Persona struct {
 	Nombre string
 	Edad   int
 	Correo string
+}
+
+type Categoria struct {
+	Id     int
+	Nombre string
+	Slug   string
+}
+
+type Producto struct {
+	Id          int
+	Nombre      string
+	Slug        string
+	Precio      int
+	CategoriaId Categoria
 }
 
 /*
