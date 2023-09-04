@@ -1,10 +1,34 @@
 package main
 
 import (
-	"flag"
-	"fmt"
+	"log"
+	"os"
 )
 
+// logs
+
+func main() {
+	//err := errors.New("Este es un error fatal de prueba")
+	//log.Fatal(err) // esto me detine la ejecuion
+	//log.Println("Straing the application ...")
+	//log.Fatalln("Fatal: Fatal error signal")
+	//log.Fatalf("Fatal: Fatal error signal", "Var err")
+	//log.Panic("Error: Fatal error message")
+	//log.Panicln("Error: Panic error message")
+	//error := "todo esta mal"
+	//log.Panicf("error %s", error)
+	f, err := os.OpenFile("logs.log", os.O_APPEND|os.O_CREATE|os.O_RDWR, 0666)
+	if err != nil {
+		log.Fatal(err)
+	}
+	// cerrar el archivo cuando se termina la ejecucion
+	defer f.Close()
+	log.SetOutput(f)
+	log.Println("Error: ", err)
+
+}
+
+/*
 // modulo os | argumentos
 func main() {
 
@@ -16,6 +40,7 @@ func main() {
 
 	fmt.Printf("Tu nombre es: %s, tines %d años\n", *nombre, *edad)
 }
+*/
 
 /*
 // math/rand
