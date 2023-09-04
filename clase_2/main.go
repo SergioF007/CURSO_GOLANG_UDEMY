@@ -2,9 +2,70 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	"strings"
+	"time"
 )
 
+// math/rand
+func main() {
+	numAleatorio := rand.Intn(100)
+	fmt.Println(numAleatorio)
+	min := 100
+	max := 1000
+	rand.Seed(time.Now().UnixNano())
+	numAleatorio2 := rand.Intn(max-min) + min
+	fmt.Println(numAleatorio2)
+	fmt.Println(generatePassword(20, 1, 1, 1))
+
+}
+
+var (
+	lowerCharSet   = "abcdefghijklmnopqrstuvwxyz"
+	upperCharSet   = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+	specialCharSet = "!#$%&*+@"
+	numberSet      = "0123456789"
+	allCharSet     = lowerCharSet + upperCharSet + specialCharSet + numberSet
+)
+
+func generatePassword(passwordLength, minSpecialChar, miniNum, minUpperCase int) string {
+	var password strings.Builder
+
+	//Set special character
+	for i := 0; i < minSpecialChar; i++ {
+		password.WriteString(string(specialCharSet[rand.Intn(len(specialCharSet))]))
+	}
+
+	// Set numeric
+	for i := 0; i < miniNum; i++ {
+		password.WriteString(string(numberSet[rand.Intn(len(numberSet))]))
+	}
+
+	// Set uppercase
+	for i := 0; i < minUpperCase; i++ {
+		password.WriteString(string(upperCharSet[rand.Intn(len(upperCharSet))]))
+	}
+
+	/*
+		    // Set lowercase
+			for i := 0; i < passwordLength-miniNum-minUpperChar-minSpecialChar; i++ {
+		        password.WriteString(string(lowerCharSet[rand.Intn(len(lowerCharSet))]))
+		    }
+
+	*/
+
+	remainingLength := passwordLength - minSpecialChar - miniNum - minUpperCase
+	for i := 0; i < remainingLength; i++ {
+		password.WriteString(string(allCharSet[rand.Intn(len(allCharSet))]))
+	}
+	inRune := []rune(password.String())
+	rand.Shuffle(len(inRune), func(i, j int) {
+		inRune[i], inRune[j] = inRune[j], inRune[i]
+	})
+	return string(inRune)
+}
+
+/*
 // modulo strings
 func main() {
 	cadena := "mi muñeca me hablo"
@@ -30,6 +91,7 @@ func main() {
 	fmt.Println(cadenaNueva[0:10])
 
 }
+*/
 
 /*
 // modulo time
