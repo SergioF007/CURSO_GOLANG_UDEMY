@@ -2,9 +2,37 @@ package main
 
 import (
 	"fmt"
-	"time"
+	"strings"
 )
 
+// modulo strings
+func main() {
+	cadena := "mi muñeca me hablo"
+	fmt.Println(strings.ToUpper(cadena))
+	fmt.Println(strings.ToLower(cadena))
+	fmt.Println("-----------------Se para la cadena por cada una de las letras---------------------")
+	letras := strings.Split(cadena, "")
+	fmt.Println(letras)
+	fmt.Println("--------Buscar una palabra en un cadena de texto--------")
+	pos := strings.Index(cadena, "muñeca")
+	if pos == -1 {
+		fmt.Println("No se encontro la palabra")
+	} else {
+		fmt.Println("La palabra se encuentra en la cadena de texto", cadena, " a partir de la posicion", pos)
+	}
+	fmt.Println("-------------Repetir la cadena de texto------------")
+	repetida := strings.Repeat(cadena, 2)
+	fmt.Println(repetida)
+	fmt.Println("----------------Remplazar una palabra de la cadena---------------- ")
+	cadenaNueva := strings.Replace(cadena, "mi", "la", -1)
+	fmt.Println(cadenaNueva)
+	fmt.Println("----------------Imprimer una seccion de la nueva cadena---------------- ")
+	fmt.Println(cadenaNueva[0:10])
+
+}
+
+/*
+// modulo time
 func main() {
 
 	fmt.Println("La hora actual es: ", time.Now())
@@ -39,3 +67,5 @@ func FormatearFecha(fecha time.Time) string {
 	fechaString := fmt.Sprintf("%v/%v/%v \n", fecha.Day(), fecha.Month(), fecha.Year())
 	return fechaString
 }
+
+*/
