@@ -1,12 +1,23 @@
 package main
 
 import (
+	"flag"
 	"fmt"
-	"math/rand"
-	"strings"
-	"time"
 )
 
+// modulo os | argumentos
+func main() {
+
+	// go run main.go -nombre Sergio -edad 22
+	nombre := flag.String("nombre", "", "El nombre de la persona")
+	edad := flag.Int("edad", 27, "La edad de la persona")
+
+	flag.Parse()
+
+	fmt.Printf("Tu nombre es: %s, tines %d años\n", *nombre, *edad)
+}
+
+/*
 // math/rand
 func main() {
 	numAleatorio := rand.Intn(100)
@@ -52,8 +63,8 @@ func generatePassword(passwordLength, minSpecialChar, miniNum, minUpperCase int)
 		        password.WriteString(string(lowerCharSet[rand.Intn(len(lowerCharSet))]))
 		    }
 
-	*/
-
+*/
+/*
 	remainingLength := passwordLength - minSpecialChar - miniNum - minUpperCase
 	for i := 0; i < remainingLength; i++ {
 		password.WriteString(string(allCharSet[rand.Intn(len(allCharSet))]))
@@ -64,6 +75,8 @@ func generatePassword(passwordLength, minSpecialChar, miniNum, minUpperCase int)
 	})
 	return string(inRune)
 }
+
+*/
 
 /*
 // modulo strings
