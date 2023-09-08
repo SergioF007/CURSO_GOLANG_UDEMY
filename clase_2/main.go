@@ -1,12 +1,19 @@
 package main
 
 import (
-	"log"
-	"os"
+	//moduloEjemplo "clase_2/modulo_ejemplo"
+	"clase_2/modulo_ejemplo"
+	"fmt"
 )
 
-// logs
+// modulo personalizado
+func main() {
+	fmt.Println(modulo_ejemplo.Ejemplo1())
+	fmt.Println(modulo_ejemplo.Ejemplo2("Sergio"))
+}
 
+/*
+// logs
 func main() {
 	//err := errors.New("Este es un error fatal de prueba")
 	//log.Fatal(err) // esto me detine la ejecuion
@@ -27,6 +34,7 @@ func main() {
 	log.Println("Error: ", err)
 
 }
+*/
 
 /*
 // modulo os | argumentos
