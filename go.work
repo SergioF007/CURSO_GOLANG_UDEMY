@@ -1,0 +1,7 @@
+go 1.19
+
+use (
+    ./clase_1
+    ./clase_2
+    ./clase_3
+) 
