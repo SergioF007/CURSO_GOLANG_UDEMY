@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Estructuras</h1>
+    <h3>Declaraciín de variables</h3>
+    {{with $valor:="Mi valor con ñadú"}}
+    <p> {{$valor}} </p>
+
+    {{end}}
+
+    <hr/>
+    <h3>Valores desde struct</h3>
+    <ul>
+        <li>Nombre: {{.Nombre}} </li>
+        <li>Edad: {{.Edad}} </li>
+        <li>Perfil: {{.Perfil}} </li>
+    </ul>
+
+    <hr>
+    <h3>Condicionales</h3>
+    <!--
+        Operaciodres logicos 
+        not !
+        and &&
+        or ||
+
+        Operadores Condicionales
+        eq ==
+        ne !=
+        lt <
+        le <=
+        gt >
+        >= ge
+    -->
+
+    {{if ge .Edad 18}}
+    <p>Eres mayor de edad</p>
+    {{else}}
+    <p>Eres menor de edad</p>
+    {{end}}
+    {{if ge .Perfil 1}}
+    <p>Eres Administrador</p>
+    {{else}}
+    <p>Tienes otro perfil</p>
+    {{end}}
+    
+    <hr>
+    <h3>Iteraciones</h3>
+    {{.Habilidades}}
+    <ul>
+        {{range .Habilidades}}
+            <li> {{.Nombre}} </li> <!-- asi defini la variable en el estruc de Habilidad -->
+
+        {{end}}
+    </ul>
+
+</body>
+</html>
