@@ -1,3 +1,6 @@
 [submodule "clase_1"]
 	path = clase_1
 	url = /ruta/al/repo/clase_1
+[submodule "clase_4_web"]
+	path = clase_4_web
+	url = /ruta/al/repo/clase_4_web
